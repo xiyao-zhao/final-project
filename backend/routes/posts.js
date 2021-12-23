@@ -138,7 +138,7 @@ router.get("/:id", (req, res, next) => {
 })
 
 router.delete("/:id", checkAuth, (req, res, next) => {
-    Post. deleteOne({ _id: req.params.id, creator: req.userData.userId })
+    Post.deleteOne({ _id: req.params.id, creator: req.userData.userId })
     .then(result => {
         if (result.deletedCount > 0) {
             res.status(200).json({ message: "Deletion successful!" });

@@ -5,6 +5,8 @@ const path = require("path");
 
 const postsRoutes = require("./routes/posts");
 const userRoutes = require("./routes/user");
+const adminRoutes = require("./routes/admin");
+const { db } = require("./models/user");
 
 const app = express();
 
@@ -26,7 +28,7 @@ app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader(
         "Access-Control-Allow-Headers", 
-        "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization, X-Auth-Token"
     );
     res.setHeader(
         "Access-Control-Allow-Methods", 
@@ -37,5 +39,6 @@ app.use((req, res, next) => {
 
 app.use("/api/posts", postsRoutes);
 app.use("/api/user", userRoutes);
+app.use("/api/admin", adminRoutes);
 
 module.exports = app;

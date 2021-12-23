@@ -15,7 +15,6 @@ import { AuthInterceptor } from './auth/auth-interceptor';
 import { ErrorInterceptor } from './error-interceptor';
 import { ErrorComponent } from './error/error.component';
 import { AngularMaterialModule } from './angular-material.module';
-import { AuthRoutingModule } from './auth/auth-routing.module';
 
 @NgModule({
     declarations: [
@@ -35,7 +34,6 @@ import { AuthRoutingModule } from './auth/auth-routing.module';
         BrowserAnimationsModule,
         HttpClientModule,
         AngularMaterialModule,
-        //AuthRoutingModule
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

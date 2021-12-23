@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
-import { Post } from '../post.model';
+import { Post } from '../models/post.model';
 import { PostsService } from '../posts.service';
 
 @Component({

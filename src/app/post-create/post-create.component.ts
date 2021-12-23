@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
-import { Post } from '../post.model';
+import { Post } from '../models/post.model';
 import { PostsService } from '../posts.service';
 import { mediaType } from './media-type.validator';
 

@@ -10,7 +10,10 @@ import { AuthService } from '../auth/auth.service';
 export class HeaderComponent implements OnInit, OnDestroy {
     userIsAuthenticated = false;
     private authListenerSubs: Subscription;
-    
+
+    userIsAdmin = false;
+    private adminListenerSubs: Subscription;
+
     constructor(private authService: AuthService) { }
 
     ngOnInit(): void {
@@ -20,6 +23,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
             .subscribe(isAuthenticated => {
                 this.userIsAuthenticated = isAuthenticated;
             });
+
+        this.userIsAdmin = this.authService.getIsAdmin();
+        this.adminListenerSubs = this.authService
+            .getAdminStatusListener()
+            .subscribe(isAdmin => {
+                this.userIsAdmin = isAdmin;
+            });
     }
 
     onLogout() {
@@ -28,6 +38,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         this.authListenerSubs.unsubscribe();
+        this.adminListenerSubs.unsubscribe();
     }
 
 }

@@ -1,0 +1,24 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+    <div class="container" *ngIf="users.length > 0 && !isLoading">
+        <h2>User lists</h2>
+        <div class="row" *ngFor="let user of users">
+            <!-- <ng-container *ngIf="user.role === 'User'"> -->
+                <p>{{ user.email }}</p>
+                <p>{{ user.password }}</p>
+                <button 
+                    mat-button 
+                    color="warn" 
+                    (click)="onDelete(user.email)"
+                >DELETE
+                </button>
+            <!-- </ng-container> -->
+        </div>
+    </div>
+<mat-paginator 
+    [length]="totalUsers" 
+    [pageSize]="usersPerPage"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="onChangedPage($event)"
+    *ngIf="users.length > 0"
+></mat-paginator>
+<p class="info-text mat-body-1" *ngIf="users.length === 0 && !isLoading">No users yet!</p>
