@@ -1,5 +1,13 @@
 # FinalProject
 
+ImageWorks is a social media platform for people to share posts with images and content. It is a MEAN full-stack application. Main features include:
+
+- Users can sign up, log in, log out of the application.
+- Users can view all the posts without login.
+- With login, users can post, edit and delete posts created by themselves.
+- Admin can delete any posts after login.
+- Admin can manage(delete) any user(except admin) on the admin page after login.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
 
 ## Development server
