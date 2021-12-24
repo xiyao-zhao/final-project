@@ -2,7 +2,7 @@ import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest
 import { Injectable } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { catchError, Observable, throwError } from "rxjs";
-import { ErrorComponent } from "./error/error.component";
+import { ErrorComponent } from "../error/error.component";
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
@@ -18,7 +18,6 @@ export class ErrorInterceptor implements HttpInterceptor {
                 }
                 this.dialog.open(ErrorComponent, {data: {message: errorMessage}});
                 return throwError(() => new Error());
-                //return throwError(error);
             })
         );
     }

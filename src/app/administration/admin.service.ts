@@ -25,8 +25,10 @@ export class AdminService {
                 return { 
                     users: userData.users.map(user => {
                         return { 
+                            id: user._id,
                             email: user.email,
-                            password: user.password
+                            password: user.password,
+                            role: user.role
                         };
                     }), 
                     total: userData.total

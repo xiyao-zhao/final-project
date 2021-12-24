@@ -53,7 +53,7 @@ router.post("/login", (req, res, next) => {
             }
             // if password match, create a new token based on input data of your choice
             const token = jwt.sign(
-                { email: fetchedUser.email, userId: fetchedUser._id }, 
+                { email: fetchedUser.email, userId: fetchedUser._id, role: fetchedUser.role }, 
                 "secret_this_should_be_longer", 
                 { expiresIn: "1h" }
             );

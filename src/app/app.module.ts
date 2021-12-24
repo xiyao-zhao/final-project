@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './shared/app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -12,9 +12,9 @@ import { PostCreateComponent } from './post-create/post-create.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { AuthInterceptor } from './auth/auth-interceptor';
-import { ErrorInterceptor } from './error-interceptor';
+import { ErrorInterceptor } from './shared/error-interceptor';
 import { ErrorComponent } from './error/error.component';
-import { AngularMaterialModule } from './angular-material.module';
+import { AngularMaterialModule } from './shared/angular-material.module';
 
 @NgModule({
     declarations: [

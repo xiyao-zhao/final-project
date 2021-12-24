@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { AngularMaterialModule } from "../angular-material.module";
+import { AngularMaterialModule } from "../shared/angular-material.module";
 import { AdminHomeComponent } from "./admin-home/admin-home.component";
 import { AdminRoutingModule } from "./admin-routing.module";
 import { AdminComponent } from "./admin/admin.component";

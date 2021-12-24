@@ -1,5 +1,29 @@
-.row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+.container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    margin: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+thead {
+    height: 50px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+.lastCol {
+    text-align: right;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(226, 226, 226);
 }

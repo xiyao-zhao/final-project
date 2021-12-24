@@ -15,7 +15,7 @@ export class AdminHomeComponent implements OnInit {
     users: AuthData[] = [];
     isLoading = false;
     totalUsers = 0;
-    usersPerPage = 2;
+    usersPerPage = 5;
     currentPage = 1;
     pageSizeOptions = [1, 2, 5, 10]
     userIsAuthenticated = false;
@@ -74,5 +74,4 @@ export class AdminHomeComponent implements OnInit {
         this.userSub.unsubscribe();
         this.authStatusSub.unsubscribe();
     }
-
 }
